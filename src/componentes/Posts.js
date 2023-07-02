@@ -3,8 +3,8 @@ import Post from "./Post";
 export default function Posts(){
     return (
         <div class="posts">
-            <Post />
-            <Post />
+            <Post usuario="assets/img/barked.svg" url="assets/img/dog.svg" numcurtidas="99.159" />
+            <Post url="assets/img/dog.svg" numcurtidas="99.159"/>
 
         {/* <div class="post">
             <div class="topo">

@@ -1,9 +1,35 @@
-export default function Post(){
+import { useState } from "react";
+
+export default function Post(props){
+    
+    let [curtida,setCurtida] = useState("branco");
+    let [salvar, setSalvar] = useState("branco");
+
+    function curtir(){
+        if ( curtida === "branco"){
+            //cor = "vermelho";
+            setCurtida("vermelho");
+        }else{
+            setCurtida("branco");
+        }
+    }
+
+    function salvo(){
+        if ( salvar === "branco"){
+            //cor = "vermelho";
+            setSalvar("salvo");
+        }else{
+            setSalvar("branco");
+        }
+    }
+
+
+
     return(
         <div class="post">
         <div class="topo">
             <div class="usuario">
-                <img src="assets/img/meowed.svg" alt="meowed" />
+                <img src={props.usuario} alt="meowed" />
                 meowed
             </div>
             <div class="acoes">
@@ -12,18 +38,18 @@ export default function Post(){
         </div>
 
         <div class="conteudo">
-            <img src="assets/img/gato-telefone.svg" alt="gato-telefone" />
+            <img onClick={curtir} src={props.url} alt="gato-telefone" />
         </div>
 
         <div class="fundo">
             <div class="acoes">
                 <div>
-                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon class={curtida} onClick={curtir} name="heart-outline"></ion-icon>
                     <ion-icon name="chatbubble-outline"></ion-icon>
                     <ion-icon name="paper-plane-outline"></ion-icon>
                 </div>
                 <div>
-                    <ion-icon name="bookmark-outline"></ion-icon>
+                    <ion-icon class={salvar} onClick={salvo} name="bookmark-outline"></ion-icon>
                 </div>
             </div>
 

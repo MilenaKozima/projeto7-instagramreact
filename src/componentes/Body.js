@@ -10,7 +10,7 @@ export default function Body() {
                 <Posts />
             </div>
 
-<SideBar/>
+            <SideBar />
         </div>
     );
 }

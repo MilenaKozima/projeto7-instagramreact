@@ -1,13 +1,39 @@
-export default function User(props){
-    return(
+import { useState } from "react";
+
+export default function User(props) {
+
+    let [nome, setName] = useState(`${props.name}`);
+    let [imagem,setImagem] = useState(`${props.url}`);
+
+    
+
+    function trocaNome() {
+        nome = prompt('Qual o seu nome ?');
+        setName(nome);
+    }
+
+    function trocaImagem() {
+        imagem = prompt('Qual imagem quer colocar ?');
+        if(imagem === null || imagem === ''){
+            imagem = props.url;
+            setImagem(imagem);
+        } else {
+            setImagem(imagem);
+        }
+    }
+
+    return (
         <div class="usuario">
-        <img src={props.url} alt={props.imagem} />
-        <div class="texto">
-            <span>
-                <strong>{props.name}</strong>
-                <ion-icon name="pencil"></ion-icon>
-            </span>
+            <img onClick={trocaImagem} src={imagem} />
+            <div class="texto">
+                <span>
+                    <strong>{(!nome)? 'Nome não informado' : `${nome}`}</strong>
+                    <ion-icon onClick={trocaNome} name="pencil"></ion-icon>
+                </span>
+            </div>
         </div>
-    </div>
     );
 }
+
+
+
