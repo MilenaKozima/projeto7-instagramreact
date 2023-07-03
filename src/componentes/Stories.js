@@ -1,91 +1,38 @@
-import Storie from "./Storie";
+
+const apastorie = [
+    {usuario: "nathanwpylestrangeplanet", imguser: "assets/img/nathanwpylestrangeplanet.svg"},
+    {usuario:"wawawicomics", imguser:"assets/img/wawawicomics.svg"},
+    {usuario:"respondeai", imguser:"assets/img/respondeai.svg"},
+    {usuario:"filomoderna", imguser:"assets/img/filomoderna.svg"},
+    {usuario:"memeriagourmet", imguser:"assets/img/memeriagourmet.svg"},
+    {usuario:"9gag", imguser:"assets/img/9gag.svg"},
+    {usuario:"meowed", imguser:"assets/img/meowed.svg"},
+    {usuario:"barked", imguser:"assets/img/barked.svg"},
+]
 
 export default function Stories(){
     return(
         <div class="stories">
-            <Storie />
-            <Storie />
-            <Storie />
-            <Storie />
-            <Storie />
-            <Storie />
-            <Storie />
-            <Storie />
-        {/* <div class="story">
-            <div class="imagem">
-                <img src="assets/img/9gag.svg" alt="9gag" />
-            </div>
-            <div class="usuario">
-                9gag
-            </div>
-        </div>
 
-        <div class="story">
-            <div class="imagem">
-                <img src="assets/img/meowed.svg" alt="meowed" />
-            </div>
-            <div class="usuario">
-                meowed
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-                <img src="assets/img/barked.svg" alt="barked" />
-            </div>
-            <div class="usuario">
-                barked
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-                <img src="assets/img/nathanwpylestrangeplanet.svg" alt="nathanwpylestrangeplanet" />
-            </div>
-            <div class="usuario">
-                nathanwpylestrangeplanet
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-                <img src="assets/img/wawawicomics.svg" alt="wawawicomics" />
-            </div>
-            <div class="usuario">
-                wawawicomics
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-                <img src="assets/img/respondeai.svg" alt="respondeai" />
-            </div>
-            <div class="usuario">
-                respondeai
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-                <img src="assets/img/filomoderna.svg" alt="filomoderna" />
-            </div>
-            <div class="usuario">
-                filomoderna
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-                <img src="assets/img/memeriagourmet.svg" alt="memeriagourmet" />
-            </div>
-            <div class="usuario">
-                memeriagourmet
-            </div>
-        </div> */}
+            {apastorie.map(st=> <Story sto={st}/>)}
 
         <div class="setinha">
             <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
     </div>
     );
+}
+
+function Story(props){
+    return(
+        <div class="story">
+            
+        <div class="imagem">
+            <img src={props.sto.imguser} alt="9gag" />
+        </div>
+        <div class="usuario">
+            {props.sto.usuario}
+        </div>
+    </div>
+    )
 }
