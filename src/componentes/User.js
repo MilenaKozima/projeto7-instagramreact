@@ -34,7 +34,7 @@ export default function User(props) {
             <div class="texto">
                 <span>
                     <strong data-test="name">{nome}</strong>
-                    <ion-icon test="edit-name" onClick={trocaNome} name="pencil"></ion-icon>
+                    <ion-icon data-test="edit-name" onClick={trocaNome} name="pencil"></ion-icon>
                 </span>
             </div>
         </div>
