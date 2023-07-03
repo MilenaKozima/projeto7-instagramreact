@@ -9,14 +9,20 @@ export default function User(props) {
 
     function trocaNome() {
         nome = prompt('Qual o seu nome ?');
+
+        if(!nome){
+            alert("Nome não digitado. Informe um nome!")
+            
+        } else {
         setName(nome);
+        }
     }
 
     function trocaImagem() {
         imagem = prompt('Qual imagem quer colocar ?');
         if(imagem === null || imagem === ''){
-            imagem = props.url;
-            setImagem(imagem);
+            alert("Imagem não informada. Coloque uma valida!")
+            
         } else {
             setImagem(imagem);
         }
@@ -27,7 +33,7 @@ export default function User(props) {
             <img data-test="profile-image" onClick={trocaImagem} src={imagem} />
             <div class="texto">
                 <span>
-                    <strong data-test="name">{(!nome)? 'Nome não informado' : `${nome}`}</strong>
+                    <strong data-test="name">{nome}</strong>
                     <ion-icon test="edit-name" onClick={trocaNome} name="pencil"></ion-icon>
                 </span>
             </div>

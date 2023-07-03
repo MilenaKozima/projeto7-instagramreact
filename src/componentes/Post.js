@@ -4,12 +4,19 @@ export default function Post(props) {
 
     let [curtida, setCurtida] = useState(false);
     let [salvar, setSalvar] = useState(false);
+    let [quantidade, setQuantidade] = useState(props.quantidade);
 
     function curtir() {
         if (!curtida) {
             setCurtida(true);
+            quantidade++;
+            console.log(quantidade);
+            setQuantidade(quantidade);
         } else {
             setCurtida(false);
+            quantidade--;
+            console.log(quantidade);
+            setQuantidade(quantidade);
         }
     }
 
@@ -21,22 +28,23 @@ export default function Post(props) {
         }
     }
 
-    const postagens = [
-        { nameuser: "barked", imguser: "assets/img/barked.svg", url: "assets/img/dog.svg" },
-        { nameuser: "meowed", imguser: "assets/img/meowed.svg", url: "assets/img/gato-telefone.svg" },
-        { nameuser: "barked", imguser: "assets/img/barked.svg", url: "assets/img/dog.svg" },
-    ]
+    function curtirimg() {
+        if (!curtida) {
+            setCurtida(true);
+            quantidade++;
+            console.log(quantidade);
+            setQuantidade(quantidade);
+        } 
+    }
 
 
     return (
-
-        <div data-test="post" class="post">
-            {postagens.map(poste => (
-                <>
+        <>
+                <div data-test="post" class="post">
                     <div class="topo">
                         <div class="usuario">
-                            <img src={poste.imguser} alt="meowed" />
-                            {poste.nameuser}
+                            <img src={props.imguser} alt="meowed" />
+                            {props.nameuser}
                         </div>
                         <div class="acoes">
                             <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -44,7 +52,7 @@ export default function Post(props) {
                     </div>
 
                     <div class="conteudo">
-                        <img data-test="post-image" onClick={curtir} src={poste.url} alt="gato-telefone" />
+                        <img data-test="post-image" onClick={curtirimg} src={props.url} alt="gato-telefone" />
                     </div>
 
                     <div class="fundo">
@@ -73,12 +81,11 @@ export default function Post(props) {
                         <div class="curtidas">
                             <img src="assets/img/respondeai.svg" alt="respondeai" />
                             <div class="texto">
-                                Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+                                Curtido por <strong>respondeai</strong> e <strong data-test="likes-number">outras {quantidade} pessoas</strong>
                             </div>
                         </div>
                     </div>
-                </>
-            ))}
-        </div>
+                    </div>
+            </>
     );
 }

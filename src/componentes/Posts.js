@@ -1,45 +1,20 @@
 import Post from "./Post";
 
-export default function Posts(){
+export default function Posts() {
+
+    const postagens = [
+        { nameuser: "barked", imguser: "assets/img/barked.svg", url: "assets/img/dog.svg", quantidade: "1000" },
+        { nameuser: "meowed", imguser: "assets/img/meowed.svg", url: "assets/img/gato-telefone.svg", quantidade: "2000" },
+        { nameuser: "nathan", imguser: "assets/img/nathanwpylestrangeplanet.svg", url: "assets/img/nathanwpylestrangeplanet.svg", quantidade: "3000" },
+    ]
     return (
         <div class="posts">
-            <Post usuario="assets/img/barked.svg" url="assets/img/dog.svg" numcurtidas="99.159" />
-
-        {/* <div class="post">
-            <div class="topo">
-                <div class="usuario">
-                    <img src="assets/img/barked.svg" alt="barked" />
-                    barked
-                </div>
-                <div class="acoes">
-                    <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
-            </div>
-
-            <div class="conteudo">
-                <img src="assets/img/dog.svg" alt="dog" />
-            </div>
-
-            <div class="fundo">
-                <div class="acoes">
-                    <div>
-                        <ion-icon name="heart-outline"></ion-icon>
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                        <ion-icon name="paper-plane-outline"></ion-icon>
-                    </div>
-                    <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="curtidas">
-                    <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
-                    <div class="texto">
-                        Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                    </div>
-                </div>
-            </div>
-        </div> */}
-    </div>
+            {postagens.map((p) => 
+            (<Post nameuser={p.nameuser}
+            imguser={p.imguser}
+            url={p.url}
+            quantidade={p.quantidade}
+            />))};
+        </div>
     );
 }

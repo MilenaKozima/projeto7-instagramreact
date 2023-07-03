@@ -9,10 +9,9 @@ export default function Suggestion() {
     ]
 
     return (
-        <div class="sugestao">
-
+        <>
             {suges.map(su => (
-                <>
+                <div class="sugestao">
                     <div class="usuario">
                         <img src={su.imguser} alt="adorable_animals" />
                         <div class="texto">
@@ -22,9 +21,9 @@ export default function Suggestion() {
                     </div>
 
                     <div class="seguir">Seguir</div>
-                </>
+                </div>
             ))}
-        </div>
-    );
+            </>
+    )
 }
 
