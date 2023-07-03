@@ -9,10 +9,6 @@ export default function Suggestions(){
         </div>
 
         <Suggestion />
-        <Suggestion />
-        <Suggestion />
-        <Suggestion />
-        <Suggestion />
 
 
         {/* <div class="sugestao">

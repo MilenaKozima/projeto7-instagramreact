@@ -30,7 +30,7 @@ export default function Post(props) {
 
     return (
 
-        <div data-test="profile-image" class="post">
+        <div data-test="post" class="post">
             {postagens.map(poste => (
                 <>
                     <div class="topo">
